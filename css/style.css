@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #fff;
+}
+
+ul {
+  list-style: none;
+}
+.header {
+  text-align: center;
+  letter-spacing: 0.3em;
+  width: 100%;
+  height: 50px;
+  box-shadow: 0 -2px 10px 5px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+.main {
+  width: 100%;
+  margin-top: 40px;
+  padding: 0 100px;
+}
+.main section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main .left {
+  font-family: "Creepster", serif;
+  position: relative;
+  width: 1400px;
+  height: 702px;
+  margin-right: 5px;
+}
+.left .game_begin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  font-size: 60px;
+  text-shadow: 2px 2px 0px #fff;
+  cursor: pointer;
+}
+.left .game_begin:hover {
+  font-size: 80px;
+}
+
+.main .right {
+  width: 300px;
+  border: 1px solid #ccc;
+}
+.main .right .tips,
+.rank_list {
+  padding: 0 5px;
+}
+.desc {
+  padding: 10px 0;
+  cursor: default;
+}
+.desc p {
+  text-wrap: nowrap;
+  font-size: 12px;
+  padding: 6px 0;
+  span {
+    display: inline-block;
+    width: 60px;
+    text-align: right;
+    font-weight: 700;
+    font-size: 14px;
+  }
+}
+.main .right h3 {
+  padding: 5px 0;
+  font-size: 20px;
+  cursor: default;
+}
+.line {
+  position: relative;
+  height: 1px;
+  background-color: #ccc;
+  padding: 0 2px;
+}
+.line::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 80px;
+  height: 2px;
+  background-color: #2e4400;
+}
+.rank_list .line::before {
+  width: 60px;
+} 
+/* 主画布 */
+#canvas1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1400px;
+  height: 700px;
+  font-family: "Creepster", serif;
+  border: 2px solid #ccc;
+}
+
+@media screen and (min-width: 1600px) {
+  #canvas1 {
+    width: 1200px;
+  }
+  .main .left {
+    width: 1200px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  #canvas1 {
+    width: 1400px;
+  }
+  .main .left {
+    width: 1400px;
+  }
+}
+
+#player,
+#layer1,
+#layer2,
+#layer3,
+#layer4,
+#layer5,
+.enemy,
+#fire,
+#collisionAnimation,
+#lives {
+  display: none;
+}
+
+.gradient-text {
+  background: linear-gradient(45deg, #111, #222, #ccc, #f2f2f253, #222, #999);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradientAnimation 10s ease infinite;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.rank_list_records {
+  position: relative;
+  height: 400px;
+  max-height: 400px;
+  margin-top: 10px;
+  overflow: auto;
+}
+.rank_list_records::-webkit-scrollbar {
+  display: none;
+}
+.rank_list_records table {
+  width: 100%;
+  text-align: center;
+  cursor: default;
+  border-collapse: collapse;
+}
+.rank_list_records table thead {
+  /* position: sticky; */
+  top: 0;
+  background-color: rgb(66, 65, 65);
+  color: #fff;
+}
+.rank_list_records table tr {
+  height: 40px;
+}
+.rank_list_records table tr:nth-child(2n) {
+  background-color: rgba(97, 96, 96, 0.2);
+}
+.rank_list_records table td {
+  border-bottom: 1px solid #ccc;
+}
+
+.champion {
+  font-family: "Arial Black", sans-serif;
+  font-size: 24px;
+  /* color: #f5d103; */
+  color: hsl(51, 100%, 50%);
+  font-weight: bold;
+}
+.runner_up {
+  font-family: "Arial", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(0, 0, 139);
+}
+
+.third_place {
+  font-weight: bold;
+  font-size: 18px;
+  color: #b87333;
+}
+.ranking {
+  font-family: "Indie Flower", serif;
+}
+.empty {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #aaa6a6;
+  font-size: 24px;
+}

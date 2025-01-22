@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> 
+    <link
+      href="https://fonts.googleapis.com/css2?family=Creepster&family=Indie+Flower&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>小游戏</title>
+  </head>
+  <body>
+    <header class="header"><h1 class="gradient-text">SHADOW-DOG</h1></header>
+    <main class="main">
+      <!-- 主要游戏界面 -->
+      <section>
+        <div class="left">
+          <canvas id="canvas1"></canvas>
+          <div class="game_begin">Click Begin Game!</div>
+        </div>
+        <div class="right">
+          <div class="tips">
+            <h3>操作提示</h3>
+            <div class="line"></div>
+            <div class="desc">
+              <p><span>← 键：</span> 向左移动</p>
+              <p><span>→ 键：</span>向右移动</p>
+              <p><span>↑ 键：</span>跳跃</p>
+              <p><span>↓ 键：</span>坐下，在空中点击则为下落攻击</p>
+              <p><span>空格键：</span>翻滚攻击，按下超过1秒将进入休息状态</p>
+            </div>
+          </div>
+          <div class="rank_list">
+            <h3>排行榜</h3>                              
+            <div class="line"></div>
+            <div class="rank_list_records">
+              <table>
+                <thead>
+                  <tr>
+                    <th>排名</th>
+                    <th>玩家</th>
+                    <th>得分</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 角色的图片 -->
+    <img id="player" src="./assets/shadow_dog.png" />
+    <!-- 背景 -->
+    <img src="./assets/bg/city/layer-1.png" id="layer1" />
+    <img src="./assets/bg/city/layer-2.png" id="layer2" />
+    <img src="./assets/bg/city/layer-3.png" id="layer3" />
+    <img src="./assets/bg/city/layer-4.png" id="layer4" />
+    <img src="./assets/bg/city/layer-5.png" id="layer5" />
+
+    <!-- 敌人的图片 -->
+    <img src="./assets//enemy/enemy_fly.png" id="enemy_fly" class="enemy" />
+    <img src="./assets//enemy/enemy_plant.png" id="enemy_plant" class="enemy" />
+    <img src="./assets//enemy/enemy_spider_big.png" id="enemy_spider_big" class="enemy" />
+
+    <img id="fire" src="./assets/fire.png" />
+    <img src="./assets/lives.png" id="lives" />
+    <img src="./assets/collisionAnimation.png" id="collisionAnimation" />
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>

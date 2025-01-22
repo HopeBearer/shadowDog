@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      {
+        const xhr = new XMLHttpRequest();
+        xhr.open("get", "https//www.baidu.com", true);
+        xhr.send();
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4) {
+            if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
+              console.log(xhr.responseText);
+            } else {
+              console.log(xhr.error);
+            }
+          }
+        };
+      }
+
+      {
+        class Person {
+          constructor(name) {
+            this.name = name;
+          }
+
+          printName() {
+            console.log(`Name: ${this.name}`);
+          }
+
+          static commonMethod() {
+            console.log("This is a common method for all Person and Student objects.");
+          }
+        }
+        
+        class Student extends Person {
+          constructor(name, score) {
+            super(name);
+            this.score = score;
+          }
+
+          printScore() {
+            console.log(`Score: ${this.score}`);
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
